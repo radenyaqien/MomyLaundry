@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.account.AccountFragment">
+
+    <include
+        android:id="@+id/layout_toolbar"
+        layout="@layout/layout_toolbar"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_toolbar">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatarUser"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_nameUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/app_name"
+            android:textColor="@color/secondary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/avatarUser" />
+
+        <TextView
+            android:id="@+id/tv_countryUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/location_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nameUser" />
+
+        <LinearLayout
+            android:id="@+id/layoutAccountInfo"
+            android:layout_width="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_background_radius"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_countryUser">
+
+            <TextView
+                android:id="@+id/action_account_info"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:layout_height="wrap_content"
+                android:text="@string/account_info" />
+
+            <TextView
+                android:id="@+id/action_address"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:background="@drawable/shape_background"
+                android:layout_height="wrap_content"
+                android:text="@string/my_address"
+                app:drawableEndCompat="@drawable/ic_address" />
+
+            <TextView
+                android:id="@+id/action_change_password"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:layout_height="wrap_content"
+                android:text="@string/change_password"
+                app:drawableEndCompat="@drawable/ic_password" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvOtherSetting"
+            android:layout_width="0dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:text="@string/others"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/layoutAccountInfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/secondary"/>
+        <LinearLayout
+            android:id="@+id/layout_other_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_background_radius"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOtherSetting">
+
+            <TextView
+                android:id="@+id/action_feedback"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:layout_height="wrap_content"
+                android:text="@string/reports_feedback"
+                app:drawableEndCompat="@drawable/ic_feedback" />
+            <TextView
+                android:id="@+id/action_setting_notification"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:layout_height="wrap_content"
+                android:text="@string/app_notification"
+                app:drawableEndCompat="@drawable/ic_notification" />
+            <TextView
+                android:id="@+id/action_setting"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:layout_height="wrap_content"
+                android:text="@string/settings"
+                app:drawableEndCompat="@drawable/ic_settings" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLogout"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/string_button_logout"
+            android:textAllCaps="false"
+            android:layout_marginTop="16dp"
+            app:iconPadding="0dp"
+            app:layout_constraintTop_toBottomOf="@id/layout_other_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

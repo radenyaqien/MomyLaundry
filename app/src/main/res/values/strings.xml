@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">MomyLaundry</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_report">Report</string>
+    <string name="title_account">Account</string>
+
+    <!-- Title Toolbar-->
+    <string name="title_toolbar_register">Register</string>
+    <string name="title_toolbar_forgot_password">Forgot Password</string>
+    <string name="title_order_laundry">Order Laundry</string>
+    <!-- String Button-->
+    <string name="string_button_login">Login</string>
+    <string name="string_button_register">Register</string>
+    <string name="string_button_logout">Logout</string>
+    <string name="string_button_checkout">Checkout</string>
+    <string name="string_button_confirm_order">Confirm Order</string>
+
+    <!-- Strings related to auth -->
+    <string name="prompt_phone">Phone number</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_password_confirm">Confirm Password</string>
+    <string name="prompt_email">Email</string>
+    <string name="action_sign_in">Login</string>
+    <string name="action_sign_up">Sign up now</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="other_login">You can also login with</string>
+    <string name="not_have_account">Don\'t have an account?</string>
+    <string name="text_message_create_account">Create a New Account</string>
+    <string name="text_sub_message_create_account">Create an account so you can manage your personal finance</string>
+
+    <!--String Account-->
+    <string name="location_user">Country User</string>
+    <string name="account_info">Account Info</string>
+    <string name="my_address">My Address</string>
+    <string name="change_password">Change Password</string>
+    <string name="others">Others</string>
+    <string name="reports_feedback">Reports &amp; Feedback</string>
+    <string name="refer_earn">Refer &amp; Earn</string>
+    <string name="app_notification">App Notification</string>
+    <string name="settings">Settings</string>
+
+    <!--String Change Password-->
+    <string name="prompt_old_password">Old Password</string>
+    <string name="prompt_new_password">New Password</string>
+
+    <!-- String Home-->
+    <string name="services">Services</string>
+
+    <!-- String Home - Services-->
+    <string name="service_wash">Wash</string>
+    <string name="service_fold">Fold</string>
+    <string name="service_iron">Iron</string>
+    <string name="service_dry">Dry</string>
+
+    <!-- String Laundry-->
+    <string name="t_shirt">T-Shirt</string>
+    <string name="shirt">Shirt</string>
+    <string name="sleeveless">Sleeveless</string>
+    <string name="skirt">Skirt</string>
+    <string name="polo">Polo</string>
+    <string name="suit">Suit</string>
+    <string name="jeans">Jean</string>
+
+    <!-- String Laundry - Button Checkout-->
+    <string name="cost_item">Cost</string>
+    <string name="tv_total_item">Total</string>
+    <string name="view_zero_items">0 Items</string>
+    <string name="view_zero_price">0 $</string>
+    <string name="total_items">%s Items</string>
+    <string name="price_cost">%s$</string>
+    <string name="price_zero">0</string>
+    
+    <!--String Payment Method-->
+    <string name="cod">Cash On Delivery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

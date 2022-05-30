@@ -1,0 +1,10 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.MomyLaundry" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/blue_sky</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
