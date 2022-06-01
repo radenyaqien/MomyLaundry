@@ -32,6 +32,8 @@ class LaundryListAdapter(
 
             binding.tvNameItemLaundry.text = data.name
             binding.priceItemLaundry.text = "$${data.price}"
+            binding.tvCountItem.text = data.quantity.toString()
+            Log.d("CHECK IN",data.quantity.toString())
         }
     }
 
@@ -59,12 +61,11 @@ class LaundryListAdapter(
 
         //Plus Item
         holder.binding.actionAddItem.setOnClickListener {
-            qtyItem = data.quantity!!
-            qtyItem ++
-            data.quantity = qtyItem
-            holder.binding.tvCountItem.text = qtyItem.toString()
-            Log.d("VALUE PLUS ONE", qtyItem.toString())
+            data.quantity!!.plus(1)
             itemsLaundryCallback.onAddItems(qtyItem)
+            Log.d("VALUE PLUS ONE", data.quantity.toString())
+            changeQty(holder,data)
+            this.notifyItemChanged(position)
         }
     }
 
@@ -72,5 +73,9 @@ class LaundryListAdapter(
 
     interface ItemLaundryCallback {
         fun onAddItems(quantity: Int)
+    }
+
+    private fun changeQty(holder:ViewHolder,data: LaundryModel){
+        holder.binding.tvCountItem.text = qtyItem.toString()
     }
 }
