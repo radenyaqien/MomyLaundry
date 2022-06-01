@@ -2,7 +2,6 @@ package com.momylaundry.ui.laundry
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.momylaundry.R
@@ -13,8 +12,8 @@ import com.momylaundry.utils.DummyData
 
 class LaundryActivity : AppCompatActivity(){
     private lateinit var binding: ActivityLaundryBinding
-    private var data: LaundryModel?=null
-    private var total:Int = 0
+    private val adapterTemp : LaundryListAdapter by lazy { LaundryListAdapter(onitemclick()) }
+    private var total: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,25 +36,35 @@ class LaundryActivity : AppCompatActivity(){
     }
 
     private fun setRecyclerView() {
-        binding.rvLaundry.layoutManager = GridLayoutManager(this,2, GridLayoutManager.VERTICAL,false)
+        binding.rvLaundry.layoutManager =
+            GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
         binding.rvLaundry.setHasFixedSize(true)
-        val adapterTemp = LaundryListAdapter(object: LaundryListAdapter.ItemLaundryCallback {
-            override fun onAddItems(quantity: Int) {
-                total += quantity
-                Log.d("CHECK LAGI", quantity.toString())
-                Log.d("CHECK GAIn", total.toString())
-                binding.totalItems.text = getString(R.string.total_items, total.toString())
-            }
 
-        })
 
         adapterTemp.setData(DummyData.getListItemLaundry())
         binding.rvLaundry.adapter = adapterTemp
     }
 
+    fun onitemclick() = object : LaundryListAdapter.ItemLaundryCallback {
+
+
+        override fun onAddItems(model: LaundryModel, position: Int) {
+            model.quantity?.plus(1)
+            total += 1
+            adapterTemp.notifyItemChanged(position)
+        }
+
+        override fun onMinusItems(model: LaundryModel, position: Int) {
+            model.quantity?.minus(1)
+            total -= 1
+            adapterTemp.notifyItemChanged(position)
+        }
+
+    }
+
     private fun setActionButton() {
         binding.buttonConfirmOrder.setOnClickListener {
-            startActivity(Intent(this,ConfirmOrderActivity::class.java))
+            startActivity(Intent(this, ConfirmOrderActivity::class.java))
             finish()
         }
     }
