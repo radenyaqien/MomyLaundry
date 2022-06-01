@@ -15,7 +15,6 @@ import java.util.*
 class LaundryActivity : AppCompatActivity(){
     private lateinit var binding: ActivityLaundryBinding
     private var data: LaundryModel?=null
-    private var qty:Int = 0
     private var total:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,22 +42,10 @@ class LaundryActivity : AppCompatActivity(){
         binding.rvLaundry.setHasFixedSize(true)
         val adapterTemp = LaundryListAdapter(object: LaundryListAdapter.ItemLaundryCallback {
             override fun onAddItems(quantity: Int) {
-
-                Log.d("CHECK QTY IN ACTIVITY ", qty.toString() )
+                total += quantity
+                Log.d("CHECK QTY IN ACTIVITY ", total.toString() )
                 Log.d("CHECK QTY IN  ", quantity.toString() )
-                binding.totalItems.text = getString(R.string.total_items,qty.toString())
-            }
-
-            override fun onMinusItems(id: Int, quantity: Int, total: Int) {
-                data?.id.let {
-
-                }
-            }
-
-            override fun onSetQty(laundry: LaundryModel){
-                qty = laundry.quantity!!
-                Log.d("CHECK QTY IN SETQTY  ", laundry.quantity.toString() )
-                binding.priceItem.text = getString(R.string.price_cost,qty.toString())
+                binding.totalItems.text = getString(R.string.total_items,total.toString())
             }
 
         })
